@@ -22,6 +22,7 @@ services:
     networks:
       knet:
         ipv4_address: 172.12.3.10  
+#-------------------------------------
   kafka-controller:
     image: docker.io/bitnami/kafka:latest
     environment:
@@ -37,6 +38,7 @@ services:
     networks:
       knet:
         ipv4_address: 172.12.3.11  
+#-------------------------------------
   kafka-broker:
     image: docker.io/bitnami/kafka:latest
     environment:
