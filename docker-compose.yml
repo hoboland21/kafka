@@ -5,7 +5,7 @@ version: "3"
 
 services:
 #--------------------------------- 
-  kafka-combined:
+  kafka-0:
     image: docker.io/bitnami/kafka:latest
     ports:
       - "9092:9092"
@@ -26,7 +26,7 @@ services:
       knet:
         ipv4_address: 172.12.3.10  
 #-------------------------------------
-  kafka-controller:
+  kafka-1:
     image: docker.io/bitnami/kafka:latest
     environment:
       - KAFKA_CFG_NODE_ID=1
@@ -42,7 +42,7 @@ services:
       knet:
         ipv4_address: 172.12.3.11  
 #-------------------------------------
-  kafka-broker:
+  kafka-2:
     image: docker.io/bitnami/kafka:latest
     environment:
       - KAFKA_CFG_NODE_ID=2
