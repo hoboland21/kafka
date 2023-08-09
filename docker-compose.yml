@@ -9,9 +9,6 @@ services:
     image: docker.io/bitnami/kafka:latest
     ports:
       - "9092:9092"
-    depends_on:
-      - kafka-controller
-      - kafka-broker
     environment:
       - KAFKA_CFG_NODE_ID=0
       - KAFKA_CFG_PROCESS_ROLES=controller,broker
