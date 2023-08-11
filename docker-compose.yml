@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  kafka-combined:
+  kafka-0:
     image: docker.io/bitnami/kafka:latest
     ports:
       - "9092:9092"
@@ -15,7 +15,7 @@ services:
       - KAFKA_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv
     volumes:
       - kafka_0_data:/bitnami/kafka
-  kafka-controller:
+  kafka-1:
     image: docker.io/bitnami/kafka:latest
     environment:
       - KAFKA_CFG_NODE_ID=1
@@ -27,7 +27,7 @@ services:
       - KAFKA_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv
     volumes:
       - kafka_1_data:/bitnami/kafka
-  kafka-broker:
+  kafka-2:
     image: docker.io/bitnami/kafka:latest
     environment:
       - KAFKA_CFG_NODE_ID=2
